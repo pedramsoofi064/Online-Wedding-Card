@@ -32,7 +32,7 @@ const countdown = ref({
 })
 
 // 🎯 Set your wedding date here
-const targetDate = new Date('2025-06-17T18:00:00+03:30')
+const targetDate = new Date('2025-08-29T17:00:00+03:30');
 
 const updateCountdown = () => {
   const now = new Date()

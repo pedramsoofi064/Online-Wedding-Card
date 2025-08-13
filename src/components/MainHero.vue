@@ -4,13 +4,13 @@
     <div class="invite-mobile">
       <div class="img-bg">
       </div>
-      <div class="info">
+      <div class="info" data-aos="fade-up">
         <div class="names negin">Negin</div>
         <div class="names pedram">Pedram</div>
         <div class="dates">
-          <span class="date">1404.03.28</span>
+          <span class="date">1404.06.07</span>
           -
-          <span class="date">2025.06.18</span>
+          <span class="date">2025.08.29</span>
         </div>
         <!-- <span class="line"></span>
         <div class="place">

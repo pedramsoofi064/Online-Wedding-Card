@@ -4,7 +4,7 @@
 
     <q-timeline layout="loose" color="primary">
 
-      <q-timeline-entry side="right">
+      <q-timeline-entry side="right" data-aos="fade-up" data-aos-duration="300">
         <template #title>
           <div class="timeline-item">
             <img class="timeline-item__icon" src="../assets/img/welcome.png" alt="">
@@ -15,7 +15,7 @@
         </template>
       </q-timeline-entry>
 
-      <q-timeline-entry side="left">
+      <q-timeline-entry side="left" data-aos="fade-up" data-aos-duration="300">
         <template #title>
           <div class="timeline-item">
             <img class="timeline-item__icon" src="../assets/img/wedding-rings.png" alt="">
@@ -26,7 +26,7 @@
 
       </q-timeline-entry>
 
-      <q-timeline-entry side="right">
+      <q-timeline-entry side="right" data-aos="fade-up" data-aos-duration="300">
         <template #title>
           <div class="timeline-item">
             <img class="timeline-item__icon" src="../assets/img/camera.png" alt="">
@@ -37,7 +37,7 @@
         </template>
 
       </q-timeline-entry>
-      <q-timeline-entry side="left">
+      <q-timeline-entry side="left" data-aos="fade-up" data-aos-duration="300">
         <template #title>
           <div class="timeline-item">
             <img class="timeline-item__icon" src="../assets/img/music.png" alt="">
@@ -48,7 +48,7 @@
         </template>
 
       </q-timeline-entry>
-      <q-timeline-entry side="right">
+      <q-timeline-entry side="right" data-aos="fade-up" data-aos-duration="300">
         <template #title>
           <div class="timeline-item">
             <img class="timeline-item__icon" src="../assets/img/cake.png" alt="">
@@ -59,7 +59,7 @@
         </template>
 
       </q-timeline-entry>
-      <q-timeline-entry side="left">
+      <q-timeline-entry side="left" data-aos="fade-up" data-aos-duration="300">
         <template #title>
           <div class="timeline-item">
             <img class="timeline-item__icon" src="../assets/img/dinner.png" alt="">
@@ -71,7 +71,7 @@
 
       </q-timeline-entry>
 
-       <q-timeline-entry side="right">
+       <q-timeline-entry side="right" data-aos="fade-up" data-aos-duration="300">
         <template #title>
           <div class="timeline-item">
             <img class="timeline-item__icon" src="../assets/img/exit.png" alt="">

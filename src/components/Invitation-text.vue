@@ -1,6 +1,6 @@
 <template>
   <div class="invitation-text">
-    <article class="q-pa-md invitation-article">
+    <article class="q-pa-md invitation-article" data-aos="fade-up">
       <p>در میانه راهِ زندگی،</p>
       <p>دست در دست مهر،</p>
       <p>دل در گروِ عشق،</p>
