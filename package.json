@@ -1,11 +1,12 @@
 {
   "name": "wedding-card",
-  "version": "0.0.1",
-  "description": "a wedding cart to negin and pedram wedding",
-  "productName": "The Wedding of Negin & Pedram",
+  "version": "1.0.0",
+  "description": "Customizable digital wedding invitation built with Quasar",
+  "productName": "Celebration Invitation",
   "author": "Pedram <pedramsoofi064@gmail.com>",
   "type": "module",
-  "private": true,
+  "private": false,
+  "license": "MIT",
   "scripts": {
     "lint": "eslint -c ./eslint.config.js \"./src*/**/*.{js,cjs,mjs,vue}\"",
     "format": "prettier --write \"**/*.{js,vue,scss,html,md,json}\" --ignore-path .gitignore",
@@ -31,6 +32,8 @@
     "globals": "^15.12.0",
     "postcss": "^8.4.14",
     "prettier": "^3.3.3",
+    "typescript": "^5.6.3",
+    "@typescript-eslint/parser": "^8.12.0",
     "vite-plugin-checker": "^0.9.0"
   },
   "engines": {

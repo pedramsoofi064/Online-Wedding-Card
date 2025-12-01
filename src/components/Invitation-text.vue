@@ -1,30 +1,19 @@
 <template>
   <div class="invitation-text">
     <article class="q-pa-md invitation-article" data-aos="fade-up">
-      <p>در میانه راهِ زندگی،</p>
-      <p>دست در دست مهر،</p>
-      <p>دل در گروِ عشق،</p>
-      <p>به برکتی از سرنوشت رسیده‌ایم...</p>
-      <br />
-
-      <p>اکنون که فصل شکفتن دو دل فرا رسیده،</p>
-      <p>و لبخندمان معنای تازه‌ای یافته،</p>
-      <p>با کمال احترام از شما دعوت می‌کنیم</p>
-      <p>تا در جشن پیوند دل‌هامان</p>
-      <p>با حضورتان برکت و زیبایی بیافزایید.</p>
-      <br />
-
-      <p>شما را به تماشای آغاز این قصه‌ی مشترک فرا می‌خوانیم...</p>
-      <p>چهارشنبه ۲۸ خرداد - ساعت ۱۸</p>
-      <br />
-      <p style="margin-bottom: 10px;">با مهر،</p>
-      <p> نگین حداد  <span style="margin-inline: 3px;">و</span> پدارم  صوفی </p>
-
+      <p v-for="(line, index) in invitationParagraphs" :key="`${line.text}-${index}`">
+        {{ line.text }}
+      </p>
     </article>
   </div>
 
 </template>
 
+<script setup lang="ts">
+import { eventConfig } from 'src/content/eventConfig';
+
+const invitationParagraphs = eventConfig.invitation.paragraphs;
+</script>
 
 <style scoped lang="scss">
 .invitation-text {
@@ -37,17 +26,14 @@
 }
 
 .invitation-article {
-
-
   // background: #f1e9de;
   // padding: 30px;
   position: relative;
-  direction: rtl;
+  direction: ltr;
+  text-align: center;
   width: 100%;
   max-width: 800px;
-  font-family: "Noto Nastaliq Urdu",
-  serif;
-  position: relative;
+  font-family: "Georgia", serif;
   color: #c6b49c;
   font-size: 18px;
   // box-shadow: -5px 12px 41px -4px rgba(0, 0, 0, 0.61);
@@ -90,5 +76,4 @@
 //   bottom: -35px;
 //   background: url(../assets/img/invitation-container.svg) bottom;
 //   background-size: 200%;
-// }
-</style>
+// }</style>

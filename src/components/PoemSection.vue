@@ -17,14 +17,20 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { computed } from 'vue';
 
+type PoemLine = {
+  class?: string;
+  text: string;
+};
 
-const props = defineProps(['image', 'texts'])
+const props = defineProps<{
+  image: string;
+  texts: PoemLine[];
+}>();
 
-const imgSrc = computed(() => new URL(`../assets/img/${props.image}`, import.meta.url).href)
-
+const imgSrc = computed(() => new URL(`../assets/img/${props.image}`, import.meta.url).href);
 </script>
 
 <style scoped lang="scss">
@@ -58,7 +64,8 @@ const imgSrc = computed(() => new URL(`../assets/img/${props.image}`, import.met
     color: #fcfaf7;
     font-family: "Noto Nastaliq Urdu", serif;
     z-index: 2;
-    direction: rtl;
+    direction: ltr;
+    text-align: center;
     font-weight: bold;
     margin-top: 25px;
 
