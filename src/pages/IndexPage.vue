@@ -20,11 +20,11 @@
         <BannerSection />
         <TimeLineSection />
         <div style="background-color:#f1e9de;">
-          <PoemSection image="poem2.jpg" :texts="peom" />
+          <PoemSection :image="poemContent.image" :texts="[...poemContent.texts]" />
           <CountDownSection />
           <AddressSection />
         </div>
-      </div>
+    </div>
     </div>
 
 
@@ -35,7 +35,7 @@
   </q-page>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import MainHero from 'src/components/MainHero.vue';
 import BannerSection from 'src/components/BannerSection.vue';
 import TimeLineSection from 'src/components/TimeLineSection.vue';
@@ -43,16 +43,9 @@ import PoemSection from 'src/components/PoemSection.vue';
 import CountDownSection from 'src/components/CountDownSection.vue';
 import InvitationText from 'src/components/Invitation-text.vue';
 import AddressSection from 'src/components/AddressSection.vue';
+import { eventConfig } from 'src/content/eventConfig';
 
-
-const peom = [
-  { class: 'line', text: 'اشتیاقی که به دیدار تو‌ دارد دل من،' },
-  { class: 'line', text: 'دل من داند و‌ من دانم و دل داند و من .' },
-  { class: 'comma', text: '،،،' },
-  { class: 'line', text: 'خاک من گل شود و گل شکفد از گل من،' },
-  { class: 'line', text: 'تا ابد مهر تو بیرون نرود از دل من.' }
-];
-//
+const poemContent = eventConfig.poem;
 </script>
 
 <style>
@@ -88,7 +81,7 @@ const peom = [
 }
 
 .fullpage-bg {
-  background-image: url('../assets/img/hero3.jpg');
+  background-image: url('../assets/img/hero.jpg');
   background-size: cover;
   /* background-position: center; */
   filter: blur(5px);

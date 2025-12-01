@@ -3,62 +3,62 @@
     <div class="timer">
       <div class="time-unit">
         <span class="number">{{ countdown.days }}</span>
-        <span class="label">روز</span>
+        <span class="label">Days</span>
       </div>
       <div class="time-unit">
         <span class="number">{{ countdown.hours }}</span>
-        <span class="label">ساعت</span>
+        <span class="label">Hours</span>
       </div>
       <div class="time-unit">
         <span class="number">{{ countdown.minutes }}</span>
-        <span class="label">دقیقه</span>
+        <span class="label">Minutes</span>
       </div>
       <div class="time-unit">
         <span class="number">{{ countdown.seconds }}</span>
-        <span class="label">ثانیه</span>
+        <span class="label">Seconds</span>
       </div>
     </div>
   </div>
 </template>
 
-<script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+<script setup lang="ts">
+import { ref, onMounted, onUnmounted } from 'vue';
+import { eventConfig } from 'src/content/eventConfig';
 
 const countdown = ref({
   days: 0,
   hours: 0,
   minutes: 0,
   seconds: 0
-})
+});
 
-// 🎯 Set your wedding date here
-const targetDate = new Date('2025-06-17T18:00:00+03:30')
+const targetDate = new Date(eventConfig.countdown.targetDate);
 
 const updateCountdown = () => {
-  const now = new Date()
-  const diff = targetDate - now
+  const now = new Date();
+  const diff = targetDate.getTime() - now.getTime();
 
   if (diff <= 0) {
-    countdown.value = { days: 0, hours: 0, minutes: 0, seconds: 0 }
-    return
+    countdown.value = { days: 0, hours: 0, minutes: 0, seconds: 0 };
+    return;
   }
 
-  const totalSeconds = Math.floor(diff / 1000)
-  countdown.value.days = Math.floor(totalSeconds / (60 * 60 * 24))
-  countdown.value.hours = Math.floor((totalSeconds / 3600) % 24)
-  countdown.value.minutes = Math.floor((totalSeconds / 60) % 60)
-  countdown.value.seconds = totalSeconds % 60
-}
+  const totalSeconds = Math.floor(diff / 1000);
+  countdown.value.days = Math.floor(totalSeconds / (60 * 60 * 24));
+  countdown.value.hours = Math.floor((totalSeconds / 3600) % 24);
+  countdown.value.minutes = Math.floor((totalSeconds / 60) % 60);
+  countdown.value.seconds = totalSeconds % 60;
+};
 
-let interval
+let interval: ReturnType<typeof setInterval> | undefined;
 onMounted(() => {
-  updateCountdown()
-  interval = setInterval(updateCountdown, 1000)
-})
+  updateCountdown();
+  interval = setInterval(updateCountdown, 1000);
+});
 
 onUnmounted(() => {
-  clearInterval(interval)
-})
+  clearInterval(interval);
+});
 </script>
 
 <style scoped>

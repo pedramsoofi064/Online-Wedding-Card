@@ -1,20 +1,25 @@
 <template>
-  <div class="banner">
+  <div class="banner" data-aos="fade-up">
     <div class="banner__img">
-      <img src="../assets/img/banner2.JPG" alt="">
+      <img :src="bannerImage" alt="">
     </div>
     <div class="banner__bg"> </div>
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import { computed } from 'vue';
+import { eventConfig } from 'src/content/eventConfig';
 
+const bannerImage = computed(() =>
+  new URL(`../assets/img/${eventConfig.hero.bannerImage}`, import.meta.url).href
+);
 </script>
 
 <style lang="scss" scoped>
-
 $width: 300px;
 $height: 375px;
+
 .banner {
   margin-bottom: 50px;
   margin-top: 20px;
@@ -26,7 +31,7 @@ $height: 375px;
 
   // overflow: hidden
 
-    &__img {
+  &__img {
     width: $width;
     height: $height;
     position: relative;
